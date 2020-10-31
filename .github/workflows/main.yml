@@ -1,0 +1,13 @@
+on: [workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: oss-gate/issue-cleaner@v2
+        with:
+          owner: ${{ github.repository_owner }}
+          repo: ${{ github.repository }}
+        env:
+          DOORKEEPER_TOKEN: ${{ secrets.DOORKEEPER_TOKEN }}
