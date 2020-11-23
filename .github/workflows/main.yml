@@ -6,5 +6,7 @@ jobs:
 
     steps:
       - uses: oss-gate/issue-cleaner@v2
+        with:
+          DOORKEEPER_GROUP: oss-gate
         env:
           DOORKEEPER_TOKEN: ${{ secrets.DOORKEEPER_TOKEN }}
